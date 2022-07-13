@@ -1,0 +1,107 @@
+@import "../variables";
+@import "../mixins";
+@import "../custom";
+
+.maats-overview {
+  background-color: var(--wp--preset--color--five);
+  padding-top: 3.5rem;
+  padding-bottom: 4.444rem;
+  @include media-breakpoint-up(md) {
+    padding-top: 11.556rem;
+    padding-bottom: 11.556rem;
+  }
+
+  &--content {
+    &--heading {
+      margin-top: 0;
+      margin-bottom: 48px;
+
+      &:after {
+        content: ".";
+        color: var(--wp--preset--color--one);
+      }
+    }
+
+    &--maats {
+      display: grid;
+      grid-column-gap: 10px;
+      grid-row-gap: 1.333rem;
+      grid-template-columns: repeat(1, 1fr);
+      @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include media-breakpoint-up(lg) {
+        grid-column-gap: 1.778rem;
+        grid-row-gap: 1.778rem;
+      }
+
+      &--maat-item {
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: white;
+        padding: 0 12px 0.778em;
+        text-decoration: none;
+        @include media-breakpoint-up(lg) {
+          padding: 0 38px 1.778rem;
+        }
+
+        &--thumbnail {
+          padding: 0;
+          margin: 0 -12px;
+          width: calc(100% + (2 * 12px));
+          overflow: hidden;
+          @include media-breakpoint-up(lg) {
+            margin: 0 -38px;
+            width: calc(100% + (2 * 38px));
+          }
+
+          > img {
+            aspect-ratio: 1.875;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            transition: all .3s ease-in-out;
+          }
+        }
+
+        &--title {
+          margin-top: 0.8rem;
+          margin-bottom: 12px;
+          font-size: 1.333rem;
+          line-height: normal;
+          @include media-breakpoint-up(md) {
+            font-size: 1.556rem;
+            line-height: 1.667em;
+            margin-top: 1.778rem;
+            margin-bottom: 0.8rem;
+          }
+        }
+
+        &:hover {
+          &--thumbnail {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        &--excerpt {
+          @include media-breakpoint-up(md) {
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+          font-size: 0.778em;
+        }
+      }
+
+    }
+
+  }
+}
+
+.maat--item:hover > .maat--item--thumbnail img {
+  transform: scale(1.1);
+}
+
+

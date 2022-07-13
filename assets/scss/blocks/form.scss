@@ -1,0 +1,342 @@
+@import "../variables";
+@import "../mixins";
+@import "../custom";
+
+.form-block {
+  padding-bottom: 7.111rem;
+
+  &--container-form {
+    @extend .container;
+    @include media-breakpoint-up(md) {
+      max-width: 1024px;
+    }
+    margin-bottom: -64px;
+    padding-top: 7.778rem;
+
+    p {
+      @include media-breakpoint-up(md) {
+        font-size: 1rem;
+        line-height: 1.444rem;
+      }
+      font-size: 0.8rem;
+      line-height: 1.222rem;
+    }
+
+    &--content {
+      a {
+        @include media-breakpoint-up(md) {
+          font-weight: 400;
+          text-decoration: none;
+          transition: all 0.4s;
+          font-size: 1rem;
+          line-height: 1.444rem;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+
+        font-size: 0.8rem;
+        line-height: 1.222rem;
+      }
+
+    }
+
+    #gform_submit_button_2 {
+      height: 56px;
+      padding-top: 1.111rem;
+      padding-bottom: 1.111rem;
+      line-height: 0.8rem;
+      border: none;
+    }
+
+    #field_submit {
+      border: none !important;
+    }
+  }
+
+  .gfield_checkbox {
+    font-size: 0.778rem;
+    line-height: 1.111rem;
+
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.778rem;
+      line-height: 1.111rem;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+    }
+
+
+  }
+
+  .gform_wrapper.gravity-theme {
+    .gfield_checkbox label {
+      font-size: 0.778rem;
+    }
+  }
+
+  .gform_wrapper.gravity-theme .gfield_checkbox label,
+  .gform_wrapper.gravity-theme .gfield_radio label {
+    display: block;
+    max-width: 100%;
+  }
+
+  #field_submit {
+    grid-column: span 12;
+  }
+
+  #field_2_8 {
+    border: none !important;
+    order: 1;
+    font-size: 0.778rem;
+    line-height: 1.111rem;
+    padding-left: 1rem;
+    grid-column: span 12;
+
+    .gfield-choice-input {
+      position: absolute;
+      left: -2px;
+      top: 3px;
+    }
+  }
+
+
+  .justify-space-between {
+    justify-content: space-between;
+  }
+
+  .gform_wrapper.gravity-theme .gform_fields {
+    gap: 8px;
+  }
+
+  .gform_heading {
+    display: none;
+  }
+
+  .gform_wrapper.gravity-theme .gform_footer, .gform_wrapper.gravity-theme .gform_page_footer {
+    margin-top: 10px;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .gform_wrapper {
+    @include media-breakpoint-up(md) {
+      max-width: 350px;
+      right: 0;
+      left: auto;
+      margin-right: 0;
+      margin-left: auto;
+    }
+    margin: 0 auto;
+  }
+
+  textarea {
+    @include media-breakpoint-up(md) {
+      max-height: 146px;
+      border: none;
+      border: 1px solid #fff;
+      font-size: 1rem;
+      resize: none;
+      line-height: 1.444rem;
+    }
+    font-size: 0.8rem;
+    line-height: 1.222rem;
+  }
+
+
+  .gform_wrapper.gravity-theme {
+    input {
+      background-color: white;
+      padding: 11px 0.8rem;
+      position: relative;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.4s;
+      border: none;
+      line-height: 1.444rem;
+      color: var(--wp--preset--color--text);
+      border-radius: 0;
+    }
+
+    input {
+      &:not([type=radio]),
+      &:not([type=checkbox]),
+      &:not([type=image]),
+      &:not([type=file]) {
+        @include media-breakpoint-up(md) {
+          font-size: 1rem;
+          line-height: 1.444rem;
+        }
+        font-size: 0.8rem;
+        line-height: 1.444rem;
+      }
+    }
+
+    .active_input {
+      border: 1px solid var(--wp--preset--color--four);
+      position: relative;
+      transition: all 0.4s;
+
+      .gfield_label {
+        background-color: #F1F2F3;
+        padding-left: 5px;
+        padding-right: 5px;
+        position: absolute;
+        top: -9px;
+        color: var(--wp--preset--color--text-gray);
+        font-size: 0.778rem;
+        font-weight: 400;
+        z-index: 1;
+        left: 6%;
+        height: 12px;
+        line-height: 21px;
+      }
+
+      input {
+        background: transparent;
+        color: var(--wp--preset--color--text-gray);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.444rem;
+        border: none;
+      }
+
+
+      textarea {
+        @include media-breakpoint-up(md) {
+          background: transparent;
+          border: none;
+          font-size: 1rem;
+          font-weight: 400;
+          padding-top: 15px;
+          font-family: var(--bs-body-font-family);
+          outline: none;
+          color: var(--wp--preset--color--text-gray);
+        }
+        font-size: 0.8rem;
+        line-height: 1.444rem;
+      }
+    }
+
+    .gfield {
+      position: relative;
+    }
+
+    .gfield_required {
+      display: none;
+    }
+
+    .gfield_label {
+      @include media-breakpoint-up(md) {
+        position: absolute;
+        top: 10px;
+        color: #2e2f33;
+        font-size: 1rem;
+        transition: all 0.4s;
+        color: var(--wp--preset--color--text-gray);
+        font-size: 1rem;
+        font-weight: 400;
+        z-index: 1;
+        left: 15px;
+      }
+      font-size: 0.8rem;
+      line-height: 1.222rem;
+    }
+
+    input[type=submit] {
+      background-color: var(--wp--preset--color--one);
+      border-radius: 0px;
+      color: #FFFFFF;
+      font-size: 17px;
+      font-style: normal;
+      border: none;
+      width: 100%;
+      font-family: inherit;
+      font-weight: 600;
+      line-height: 0.8rem;
+      cursor: pointer;
+      padding: 1.111rem 32px;
+      margin-top: 2px;
+
+      &:hover {
+        background-color: var(--wp--preset--color--one-hovered);
+        border-color: var(--wp--preset--color--one-hovered);
+      }
+    }
+
+  }
+
+  .gform_wrapper.gravity-theme input[type=submit].clicked_button {
+    background: var(--wp--preset--color--four);
+    position: relative;
+  }
+}
+
+
+.validation_pass {
+  border: 1px solid #FFFFFF !important;
+}
+
+.gfield_error {
+  border: 1px solid #E24545 !important;
+}
+
+gfield.gfield_error.validation_pass {
+  border: 1px solid #E24545 !important;
+}
+
+.gform_validation_errors {
+  display: none;
+}
+
+.gfield_validation_message {
+  display: none;
+}
+
+.instruction.validation_message {
+  display: none;
+}
+
+.bedankt {
+  @include media-breakpoint-up(md) {
+    padding-top: 224px;
+    padding-bottom: 110px;
+
+    h2 {
+      margin-bottom: 0.8rem;
+      margin-top: 0;
+
+      &:after {
+        content: ".";
+        color: var(--wp--preset--color--one);
+      }
+    }
+
+    p {
+      margin-bottom: 24px;
+
+    }
+
+  }
+  padding-right: var(--bs-gutter-x, 1rem);
+  padding-left: var(--bs-gutter-x, 1rem);
+  padding-top: 140px;
+  padding-bottom: 64px;
+
+}
+
